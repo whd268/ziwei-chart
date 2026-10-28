@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible problem in the app.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, check whether this affects the development docs. If the fix changes behavior, workflow, data flow, or a long-lived decision, the PR must update `docs/dev/` or `app/AGENTS.md`.
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: What went wrong? Include visible text, error messages, or screenshots if useful.
+      placeholder: The chart shows..., the form cannot..., the workflow fails with...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Give exact inputs and actions.
+      placeholder: |
+        1. Open...
+        2. Enter birth date...
+        3. Select...
+        4. See...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Birth form / true solar time
+        - Chart calculation
+        - Birthplace matching
+        - AI interpretation / knowledge retrieval
+        - Fortune / match / K-line / share
+        - Build / tests
+        - GitHub Actions / Vercel sync
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, device, URL, commit, or branch if known.
+      placeholder: Chrome on Windows, Vercel production, commit SHA...
+  - type: checkboxes
+    id: docs
+    attributes:
+      label: Documentation impact
+      options:
+        - label: I checked whether this issue may require updates to `docs/dev/` or `app/AGENTS.md`.
+          required: true

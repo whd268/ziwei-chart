@@ -1,0 +1,42 @@
+name: Development task
+description: Track a scoped internal engineering task.
+title: "[Task]: "
+labels:
+  - task
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What exactly should change?
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Expected files or modules
+      description: List likely files, modules, or docs.
+      placeholder: |
+        - app/src/lib/...
+        - app/src/components/...
+        - docs/dev/...
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Commands or manual checks expected for this task.
+      placeholder: |
+        cd app
+        npm run test -- ...
+        npm run lint
+    validations:
+      required: true
+  - type: checkboxes
+    id: docs
+    attributes:
+      label: Documentation-as-code checklist
+      options:
+        - label: I identified which development docs need to change, or confirmed this is docs-only/no-doc-impact work.
+          required: true
+        - label: Completion requires code, tests or verification, and documentation to agree.
+          required: true

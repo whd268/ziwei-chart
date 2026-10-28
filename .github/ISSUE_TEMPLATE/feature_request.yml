@@ -1,0 +1,60 @@
+name: Feature request
+description: Propose a scoped product or engineering change.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature work must follow documentation-as-code. If accepted, implementation should update the relevant development docs in the same change set.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or engineering problem does this solve?
+      placeholder: Users currently need to..., developers currently have to...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the smallest useful version.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Birth form / true solar time
+        - Chart calculation
+        - Birthplace matching
+        - AI interpretation / knowledge retrieval
+        - Fortune / match / K-line / share
+        - Build / tests
+        - GitHub Actions / Vercel sync
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must be true before this is considered complete?
+      placeholder: |
+        - Users can...
+        - Existing behavior remains...
+        - Tests cover...
+        - Documentation updates...
+    validations:
+      required: true
+  - type: checkboxes
+    id: docs
+    attributes:
+      label: Documentation impact
+      options:
+        - label: This feature will update matching development docs if it changes behavior, architecture, workflow, or decisions.
+          required: true

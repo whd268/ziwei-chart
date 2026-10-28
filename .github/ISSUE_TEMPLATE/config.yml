@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Development documentation
+    url: https://github.com/ruijayfeng/ziwei/tree/main/docs/dev
+    about: Read the project map, workflow, progress, and decisions before proposing implementation work.
